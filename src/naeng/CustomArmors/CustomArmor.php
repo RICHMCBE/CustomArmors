@@ -26,7 +26,7 @@ class CustomArmor extends Armor implements ItemComponents{
         $maxDurability = $info["max_durability"] ?? 300;
         $this->maxDurability = is_numeric($maxDurability) ? intval($maxDurability) : 300;
         if($maxDurability == "infinity"){
-            $this->setUnbreaking();
+            $this->setUnbreakable();
         }
         $option = match($info["type"]){
             "boots"      => [ArmorInventory::SLOT_FEET, CreativeInventoryInfo::GROUP_BOOTS, WearableComponent::SLOT_ARMOR_FEET],
